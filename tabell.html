@@ -116,6 +116,54 @@ svg:not(:root){overflow:hidden}
     background-color:#696969;
 }
 
+/* Styling for the 4 bottom rows */
+
+.popup_bottom {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+   font-weight:normal; 
+  width:50px; 
+}
+
+.popup_bottom:hover {
+  background-color:rgb(79,121,163);
+  color:white;
+}
+
+.popup_bottom .popuptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  width: 60px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 0.1px;
+  left:105%;
+ 
+}
+
+/* Popup arrow */
+.popup_bottom .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: -15%;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent #555 transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup_bottom .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
 
   </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -223,19 +271,20 @@ function createRows(data_objects, header) {
 
         rows += new_row && current_row_index !== 0 ? "</tr>" : ""
         rows += new_row ?  "<tr>" : ""
-        rows += createCell(cellData, column_index, header)
+        rows += createCell(cellData, column_index, row_index ,header)
     })
     return rows;
 }
 
-function createCell(cellData, column_index, header) {
+function createCell(cellData, column_index, row_index ,header) {
     let text = ""
     if(column_index == 0) return "<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>"
     if(cellData){
+        bottom = row_index >= 19 ? 'popup_bottom ' : 'popup '
         onclicke = "onclick=toggleShow(event,'"+ cellData.key + "')"
         kursiv = column_index >= 35 && column_index <= 38 ? "kursiv" : ""
         text += "<td "+ getColumnColor(column_index, header)+ ">"
-        text +=    "<div class='popup " + kursiv +"' "+ onclicke +" id='parent'>"
+        text +=    "<div class='" + bottom  + kursiv +"' "+ onclicke +" id='parent'>"
         text +=        cellData.key
         text +=        "<div class='popuptext' id='"+cellData.key+"'>"
         text +=            createAccentTab(cellData.accents)

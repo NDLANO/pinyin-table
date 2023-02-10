@@ -18,7 +18,7 @@ overflow: hidden;
   .blue { background-color: rgb(222,234,246)}
   .brown {background-color: #e6ccb3}
   .red {background-color: #FEA7A2}
-.farge {background:rgb(79,121,163);color:white}
+.farge {background:rgb(79,121,163);color:white; position: sticky;}
 td,th {border-right:1px solid white;border-bottom:1px solid white;padding:4px;text-align:center;}
 tr:hover{background-color:#EAD854}
 .farge:hover{background:rgb(79,121,163)}
@@ -91,6 +91,8 @@ svg:not(:root){overflow:hidden}
   bottom: -365%;
   left:105%;
   font-style:normal;
+  display: flex;
+  flex-flow: column;
 }
 
 
@@ -143,7 +145,8 @@ svg:not(:root){overflow:hidden}
   z-index: 1;
   bottom: 0.1px;
   left:105%;
- 
+  display: flex;
+  flex-flow: column;
 }
 
 /* Popup arrow */
@@ -164,7 +167,15 @@ svg:not(:root){overflow:hidden}
   animation: fadeIn 1s
 }
 
+button {
+  all: unset;
+  cursor: pointer;
+}
 
+input {
+  all: unset;
+  cursor: pointer;
+}
   </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7W6XF0WSR"></script>
@@ -205,7 +216,7 @@ svg:not(:root){overflow:hidden}
 
 </table>
 </div><div style="overflow:scroll;overflow-y:hidden;width:100%;height:auto">
-  <table id="TABLE" cellspacing="0" border="0" cellpadding="0" style="border-right:1px solid rgb(79,121,163);border-bottom:1px solid rgb(79,121,163);">
+  <table id="TABLE"  tabindex="0" cellspacing="0" border="0" cellpadding="0" style="border-right:1px solid rgb(79,121,163);border-bottom:1px solid rgb(79,121,163);">
     <tr class="farge" id="HEADERS"></tr> 
  </table></div></div>
 <div style="padding:10px;float:left;font-weight:normal">

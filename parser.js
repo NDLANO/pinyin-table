@@ -172,15 +172,18 @@ function navigateTable(e){
         var idx = start.cellIndex;
         var nextrow = start.parentElement.nextElementSibling;
         if (nextrow != null) moveSelectionTable(nextrow.cells[idx]);
+
       } else if (e.keyCode == '37') {
         // left arrow
         if(start.cellIndex == 1) return
         var sibling = start.previousElementSibling;
         moveSelectionTable(sibling);
+        document.getElementById("SCROLL").scrollLeft -= 50;
       } else if (e.keyCode == '39') {
         // right arrow
         var sibling = start.nextElementSibling;
         moveSelectionTable(sibling);
+        document.getElementById("SCROLL").scrollLeft += 50;
       } else if (e.key === "Enter"){
         if(start.getAttribute('key')) toggleShow(e,start.getAttribute('key'), true);
       }
@@ -201,7 +204,6 @@ function navigateAccents(e){
         moveSelectionAccent(child_start.parentElement.children[child_index])
     }
 }
-
 
 function mod(n, m) {
     return ((n % m) + m) % m;

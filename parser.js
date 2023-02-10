@@ -1,4 +1,3 @@
-console.log(header)
 document.getElementById("TABLE").innerHTML = createColumnHeaders(header) + createRows(data, header) 
 
 var active_id = '';

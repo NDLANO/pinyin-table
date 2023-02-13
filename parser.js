@@ -18,6 +18,7 @@ start_cell.parentElement.previousElementSibling.focus();
 start_cell.focus();
 start_cell.style.backgroundColor = 'gray';
 start_cell.style.color = 'white';
+start_cell.parentElement.style.backgroundColor = '#EAD854'
 
 
 // When the user clicks on <div>, open the popup
@@ -140,9 +141,11 @@ function moveSelectionTable(sibling) {
     start_cell.focus();
     start_cell.style.backgroundColor = '';
     start_cell.style.color = '';
+    start_cell.parentElement.style.backgroundColor = ''
     sibling.focus();
     sibling.style.backgroundColor = 'gray';
     sibling.style.color = 'white';
+    sibling.parentElement.style.backgroundColor = '#EAD854'
     start_cell = sibling;
   }
 }
@@ -184,7 +187,6 @@ function navigateTable(e){
         var idx = start_cell.cellIndex;
         var nextrow = start_cell.parentElement.nextElementSibling;
         if (nextrow != null) moveSelectionTable(nextrow.cells[idx]);
-
       } else if (e.keyCode == '37') {
         // left arrow
         if(start_cell.cellIndex == 1) return

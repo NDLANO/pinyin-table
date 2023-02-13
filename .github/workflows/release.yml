@@ -1,0 +1,18 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.STATISK_TEST_S3_CLIENT_ID }}
+  AWS_DEFAULT_REGION: 'eu-west-1'
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.STATISK_TEST_S3_CLIENT_SECRET }}
+  COMPONENT: ${{ github.event.repository.name }}
+jobs:
+  release:
+    name: 'Build and push to bucket'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Release'
+        run: aws s3 cp . s3://statisk.test.ndla.no/kinesisk/$COMPONENT/ --recursive

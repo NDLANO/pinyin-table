@@ -1,16 +1,23 @@
-document.getElementById("TABLE").innerHTML = createColumnHeaders(header) + createRows(data, header) 
+/**
+ * Copyright (c) 2023-present, NDLA.
+ *
+ * This source code is licensed under the GPLv3 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
 
+createAndFillTable();
 var active_id = '';
 var sounds = [new Audio(), new Audio(),new Audio(),new Audio()];
 
-// Navigation settings
-var start = document.getElementById('start');
-var child_start = null;
-let child_index = 0;
-start.parentElement.previousElementSibling.focus();
-start.focus();
-start.style.backgroundColor = 'gray';
-start.style.color = 'white';
+// global navigation parameters/variables
+var start_cell = document.getElementById('start_cell');
+var accent_cell = null;
+let accent_index = 0;
+start_cell.parentElement.previousElementSibling.focus();
+start_cell.focus();
+start_cell.style.backgroundColor = 'gray';
+start_cell.style.color = 'white';
 
 
 // When the user clicks on <div>, open the popup
@@ -18,7 +25,7 @@ function toggleShow(e,id, notClick = false) {
   if(e.target.id != "parent" && !notClick){
     return;
   }
-  if( active_id === id){
+  if( active_id === id){ // 
     var popup = document.getElementById(id);
     popup.classList.toggle("show");
     active_id = '';
@@ -36,10 +43,15 @@ function toggleShow(e,id, notClick = false) {
     popup.classList.toggle("show");
     active_id= id;
   }
-  popup_start=document.getElementById(`start-${id}-0`)
-  popup_start.focus()
-  popup_start.style= 'background-color:#696969;';
-  child_start = popup_start;
+  
+  popup_cell = document.getElementById(`start_cell-${id}-0`) 
+  popup_cell.focus()
+  popup_cell.style= 'background-color:#696969;';
+  accent_cell = popup_cell;
+}
+
+function createAndFillTable() {
+    document.getElementById("TABLE").innerHTML = createColumnHeaders(header) + createRows(data, header) 
 }
 
 function createColumnHeaders(header){
@@ -76,7 +88,7 @@ function createCell(cellData, column_index, row_index, header) {
         
         bottom = row_index >= 19 ? 'popup_bottom ' : 'popup '
         kursiv = column_index >= 35 && column_index <= 38 ? "kursiv" : ""
-        first = column_index == 1 && row_index == 1 ? "id='start'" : ''
+        first = column_index == 1 && row_index == 1 ? "id='start_cell'" : ''
 
         text += "<td "+ getColumnColor(column_index, header)+ first + " key='"+ cellData.key + "' >"
         text +=    "<button type='button' class='" + bottom  + kursiv +"' onclick=toggleShow(event,'"+ cellData.key + "') id='parent'>"
@@ -95,7 +107,7 @@ function createCell(cellData, column_index, row_index, header) {
 function createAccentTab(accents, key) {
     let html = ""
     accents.forEach((accent,index ) => {
-        html += "<input type='submit' id='start-" + key + "-"+ index +"' class='popup-item' onclick=sounds["+index+"].play() value='" + accent  + "'/>"
+        html += "<input type='submit' id='start_cell-" + key + "-"+ index +"' class='popup-item' onclick=sounds["+index+"].play() value='" + accent  + "'/>"
     })
     return html
 }
@@ -121,29 +133,29 @@ function getColumnColor(column_index, header){
     return color
 }
 
-
+/** Navigtaion handling */
 
 function moveSelectionTable(sibling) {
   if (sibling != null) {
-    start.focus();
-    start.style.backgroundColor = '';
-    start.style.color = '';
+    start_cell.focus();
+    start_cell.style.backgroundColor = '';
+    start_cell.style.color = '';
     sibling.focus();
     sibling.style.backgroundColor = 'gray';
     sibling.style.color = 'white';
-    start = sibling;
+    start_cell = sibling;
   }
 }
 
 function moveSelectionAccent(sibling){
     if (sibling != null) {
-        child_start.focus();
-        child_start.style.backgroundColor = '';
-        child_start.style.color = '';
+        accent_cell.focus();
+        accent_cell.style.backgroundColor = '';
+        accent_cell.style.color = '';
         sibling.focus();
         sibling.style.backgroundColor = 'gray';
         sibling.style.color = 'white';
-        child_start = sibling;
+        accent_cell = sibling;
       }
 }
 
@@ -151,8 +163,8 @@ document.onkeydown = checkKey;
 
 function checkKey(e) {
   e = e || window.event;
-  let childIsSat = child_start !== null
-  if (childIsSat) {
+  let childNotNull = accent_cell !== null
+  if (childNotNull) {
     navigateAccents(e)
   } else {
     navigateTable(e)
@@ -163,45 +175,45 @@ function checkKey(e) {
 function navigateTable(e){
     if (e.keyCode == '38') {
         // up arrow
-        if(!start.parentElement.previousElementSibling.previousElementSibling) return
-        var idx = start.cellIndex;
-        var nextrow = start.parentElement.previousElementSibling;
+        if(!start_cell.parentElement.previousElementSibling.previousElementSibling) return
+        var idx = start_cell.cellIndex;
+        var nextrow = start_cell.parentElement.previousElementSibling;
         if (nextrow != null) moveSelectionTable(nextrow.cells[idx]);
       } else if (e.keyCode == '40') {
         // down arrow
-        var idx = start.cellIndex;
-        var nextrow = start.parentElement.nextElementSibling;
+        var idx = start_cell.cellIndex;
+        var nextrow = start_cell.parentElement.nextElementSibling;
         if (nextrow != null) moveSelectionTable(nextrow.cells[idx]);
 
       } else if (e.keyCode == '37') {
         // left arrow
-        if(start.cellIndex == 1) return
-        var sibling = start.previousElementSibling;
+        if(start_cell.cellIndex == 1) return
+        var sibling = start_cell.previousElementSibling;
         moveSelectionTable(sibling);
         document.getElementById("SCROLL").scrollLeft -= 50;
       } else if (e.keyCode == '39') {
         // right arrow
-        var sibling = start.nextElementSibling;
+        var sibling = start_cell.nextElementSibling;
         moveSelectionTable(sibling);
         document.getElementById("SCROLL").scrollLeft += 50;
       } else if (e.key === "Enter"){
-        if(start.getAttribute('key')) toggleShow(e,start.getAttribute('key'), true);
+        if(start_cell.getAttribute('key')) toggleShow(e,start_cell.getAttribute('key'), true);
       }
 }
 
 function navigateAccents(e){
     if (e.keyCode == '38') {
         // up arrow
-        child_index = mod(child_index-1,4)
-        moveSelectionAccent(child_start.parentElement.children[child_index])
+        accent_index = mod(accent_index-1,4)
+        moveSelectionAccent(accent_cell.parentElement.children[accent_index])
     } else if (e.keyCode == '37' || e.keyCode == '27') {
         // left arrow or escape
-        if(start.getAttribute('key')) toggleShow(e,start.getAttribute('key'), true);
-        child_start = null;
+        if(start_cell.getAttribute('key')) toggleShow(e,start_cell.getAttribute('key'), true);
+        accent_cell = null;
     } else if (e.keyCode == '40') {
         // down arrow
-        child_index = mod(child_index+1,4)
-        moveSelectionAccent(child_start.parentElement.children[child_index])
+        accent_index = mod(accent_index+1,4)
+        moveSelectionAccent(accent_cell.parentElement.children[accent_index])
     }
 }
 

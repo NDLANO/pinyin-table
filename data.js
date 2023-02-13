@@ -1,3 +1,11 @@
+/**
+ * Copyright (c) 2023-present, NDLA.
+ *
+ * This source code is licensed under the GPLv3 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
 const header = {
     "rowHeaders": [null,null,"b","p","m","f","d","t","n","l","z","c","s","zh","ch","sh","r","j","q","x","g","k","h"],
     "columnHeaders": ["a","o","e","i","i","er","ai","ei","ao","ou","an","en","ang","eng","ong","i","ia","iao","ie","iu","ian","in","iang","ing","iong","u","ua","uo","uai","ui","uan","un","uang","ueng","ü","üe","üan","ün"],

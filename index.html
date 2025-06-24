@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="public/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="public/favicon-16x16.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    type="image/png"
+    sizes="180x180"
+    href="public/apple-touch-icon.png"
+  />
+  <title>Pinyin-tabell</title>
+  <style>
+  *{font-family: arial, Arial, Helvetica, sans-serif;font-weight:bold;margin:0px;padding:0px}
+  #wrapper {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+  a{text-decoration:none;color:black;font-weight:100}
+  a:hover{background:rgb(32,88,143);color:white;}
+  .blue { background-color: rgb(222,234,246)}
+  .brown {background-color: #e6ccb3}
+  .red {background-color: #FEA7A2}
+.farge {background:rgb(79,121,163);color:white; position: sticky;}
+td,th {border-right:1px solid white;border-bottom:1px solid white;padding:4px;text-align:center;}
+tr:hover{background-color:#EAD854}
+.farge:hover{background:rgb(79,121,163)}
+#fast{position:absolute; z-index: 1030}
+.kursiv{font-style:italic}
+.c-figure__byline .c-license-icons__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.c-license-icons__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+svg:not(:root){overflow:hidden}
+.c-license-icons__icon {
+    width: 23.63636px;
+    height: 23.63636px;
+}
+.c-logo{width:120px;margin:0;z-index:100;position:relative}.c-logo__graphic{fill:#20588f}.c-logo--large{width:300px}.c-button{display:inline-block;color:#fff;background-color:#20588f;border:2px solid #20588f;border-radius:4px;padding:4px 13px;outline:none;cursor:pointer;text-decoration:none;font-size:16px;font-size:.88889rem;line-height:1.625;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;-webkit-transition:all .2s cubic-bezier(.17,.04,.03,.94);transition:all .2s cubic-bezier(.17,.04,.03,.94)}.c-button:focus,.c-button:hover{color:#fff;background-color:rgba(32,88,143,.8);border:2px solid rgba(32,88,143,0);-webkit-transform:translateY(1px) translateX(1px);transform:translateY(1px) translateX(1px)}.c-button:active{-webkit-transform:translateY(2px) translateX(2px);transform:translateY(2px) translateX(2px)}.c-button:disabled{color:#777;background-color:#e6e6e6;border:0;cursor:not-allowed;-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0)}.c-button:focus{-webkit-box-shadow:0 0 2px #20588f;box-shadow:0 0 2px #20588f}.c-button--outline{color:#20588f;background-color:transparent;border:2px solid #20588f;font-weight:700}.c-button--outline:focus,.c-button--outline:hover{color:#fff;background-color:#20588f}.c-button--outline:disabled,.c-button--outline:focus,.c-button--outline:hover{border:2px solid transparent;-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0)}.c-button--outline:disabled{color:#777;background-color:#e6e6e6;cursor:not-allowed}.c-button--transparent,.c-button--transparent:focus,.c-button--transparent:hover{color:#20588f;background-color:transparent;border:none}.c-button--stripped{-webkit-transition:background-color none;transition:background-color none;padding:0;border-radius:0;color:inherit;background-color:transparent;-webkit-box-shadow:none;box-shadow:none;border:none}.c-button--stripped:active,.c-button--stripped:disabled,.c-button--stripped:focus,.c-button--stripped:hover{-webkit-box-shadow:none;box-shadow:none;color:#20588f;background-color:transparent;-webkit-transform:none;transform:none;border:none}.c-button--square{border-radius:0}.c-button--small{padding:0}
+.c-icon {
+    display: inline-block;
+    fill: currentColor;
+    width: 16.9px;
+    height: 16.9px;
+    vertical-align: middle;
+}
+.license-byline{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap}.article_meta{margin-left:13px;font-size:14px;font-size:.77778rem;line-height:1.85714;border-right:1px solid #e8e3e3;padding-right:13px}.license-byline__body{display:none;margin-right:13px;font-size:13px;font-size:.72222rem;line-height:2;letter-spacing:.05em;margin-top:4px;margin-left:13px}.c-figure-license__details .c-license-icons__item:first-child,.c-medialist__body .c-license-icons__item:first-child{margin-bottom:13px;border-bottom:1px solid #b7cde2}.c-figure-license__details .c-license-icons__item:first-child svg,.c-medialist__body .c-license-icons__item:first-child svg{fill:#20588f}@media (max-width:37.49em){.u-mobilehide{display:none}}
+.c-figure__byline{padding-right:26px;margin-bottom:6.5px;text-align:left;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.c-figure{position:relative!important;right:auto!important;left:-16.66667%!important;width:133.33333%!important;padding-left:26px;padding-right:26px}}.c-figure__caption{background-color:#f8f8f8;padding-top:13px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;position:relative}.c-figure__captionbtn{padding-left:13px;text-decoration:underline;background:none;border:none;cursor:pointer;color:#20588f;min-width:90px}.c-figure__licensetag{display:none}.c-figure__byline{padding-right:26px;margin-bottom:6.5px;text-align:left;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.c-figure__byline .c-license-icons__list{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.c-figure__byline .c-figure__captionbtn svg,.c-figure__byline .c-license-icons__licenselabel{display:none}.c-figure__info{max-width:650px;margin-bottom:13px;font-size:14px;font-size:.77778rem;line-height:22px}@media (min-width:37.5em){.c-figure__info{-webkit-box-flex:2;-ms-flex:2;flex:2;margin-bottom:0}}.c-figure__list{background:#fff;list-style:none;padding:0 13px 13px;margin-top:0;margin-bottom:0}.c-figure__list li{list-style:none}.c-figure-list__item{margin-bottom:0}.c-figure--active{margin-bottom:104px;font-size:16px;font-size:.88889rem;line-height:1.625;position:relative}.c-figure--active .c-figure__license{background-color:#deebf6;-webkit-box-shadow:0 0 30px rgba(39,39,40,.2);box-shadow:0 0 30px rgba(39,39,40,.2);padding:26px;z-index:10}@media (min-width:37.5em){.c-figure--active .c-figure__license{width:90%;margin:0 auto;position:absolute;bottom:-60px;left:0;right:0;opacity:1;-webkit-animation-name:fadeInBottom;animation-name:fadeInBottom;-webkit-animation-duration:.5s;animation-duration:.5s}}.c-figure--active .c-figure__close{display:block;position:absolute;top:23.4px;right:26px;background:transparent;border:none;color:#20588f;font-size:20px;font-size:1.11111rem;line-height:1.3;font-weight:400;text-decoration:underline;z-index:9;cursor:pointer}.c-figure--active #figmeta{height:auto}.c-figure--active .c-figure__img{margin:0}.c-figure--active .c-figure__byline-licenselist{max-width:100%}.c-figure--active .c-license-icons__licenselabel{padding-right:26px;display:inline;max-width:400px}.c-figure--active .c-licenseToggle__details{list-style:none;padding:0;margin:0;max-width:100%}#figmeta{height:0;overflow:hidden}.c-figure__license{position:relative}.c-figure-license__cta-block{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-item-align:end;align-self:flex-end}@media (min-width:37.5em){.c-figure-license__cta-block{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap}}.c-figure-license__button{margin-bottom:13px}.c-figure-license__link{display:block;width:100%;color:#20588f}.c-figure-license__close{position:absolute;top:26px;right:26px;background:transparent;border:none;color:#20588f;font-size:20px;font-size:1.11111rem;line-height:1.3;font-weight:400;z-index:9;cursor:pointer}.c-figure-license__cta-wrapper{background-color:#fff;padding:26px;margin-top:26px}.c-licenseToggle__button{margin:4.33333px 0}.c-figure-license__title{margin:0 0 13px;font-size:18px;font-size:1rem;line-height:1.44444;color:#20588f}.c-footnotes{margin:52px 0 0;padding:52px 0 0;display:block;border-top:2px solid #eff0f2;color:gray;font-size:15px;font-size:.83333rem;line-height:1.73333}.c-footnote__item,.c-footnotes__item{margin-bottom:13px;margin-left:0}.c-footnote__item:before,.c-footnotes__item:before{display:none}.c-glossary-word__item{display:inline}.c-glossary-word__link{background:none;border:none;font-family:Source Serif Pro,Georgia,serif;line-height:1.3em;padding:0;text-decoration:none;color:#272728;border-bottom:1px solid #20588f;position:relative;cursor:pointer}.c-glossary-word__link,.c-glossary-word__link:after{-webkit-transition:border .2s ease-out;transition:border .2s ease-out}.c-glossary-word__link:after{content:"";display:inline-block;position:absolute;margin:auto;margin-top:21px;left:0;right:0;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid #20588f}@media (min-width:37.5em){.c-glossary-word__link:after{margin-top:24px}}.c-glossary-word__link:focus,.c-glossary-word__link:hover{border-bottom:1px solid #20588f;outline:none}.c-glossary-word__link:focus:after,.c-glossary-word__link:hover:after{border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #20588f}.c-glossary-word__popup{display:block;position:absolute;width:87%;-webkit-box-shadow:0 0 30px rgba(39,39,40,.2);box-shadow:0 0 30px rgba(39,39,40,.2);-webkit-box-sizing:border-box;box-sizing:border-box;z-index:1;background:#deebf6;padding:26px;opacity:0}@media (min-width:61.25em){.c-glossary-word__popup{width:100%}}.c-glossary-word__popup--visible{-webkit-animation-name:fadeInTop;animation-name:fadeInTop;-webkit-animation-duration:.4s;animation-duration:.4s;opacity:1}.c-glossary-word__title{margin-top:0;border-bottom:2px solid #20588f;text-transform:capitalize;display:block}.c-glossary-word__content{display:block;padding-top:6.5px}.c-glossary-word__footer{padding-top:13px;font-size:15px;font-size:.83333rem;line-height:1.73333;color:#777}.c-glossary-word__footer .c-license-icons__list{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.c-glossary-word__author{margin-right:26px}.c-glossary-word__close{display:inline-block;position:absolute;top:26px;right:26px;background:transparent;border:none;color:#20588f;font-size:20px;font-size:1.11111rem;line-height:1.3;font-weight:400;z-index:9;cursor:pointer}.c-icon{display:inline-block;fill:currentColor;width:16.9px;height:16.9px;vertical-align:middle}.c-icon--rotate{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.c-icon--medium{width:26px;height:26px}.c-icon--20{width:20px;height:20px}.c-license-icons__list{list-style:none;padding:0;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.c-license-icons__licenselabel{margin-left:6.5px}.c-license-icons__item{display:inline-block;padding-bottom:7px;margin-bottom:0;margin-right:.2em}.c-license-icons__hover{z-index:1;opacity:0;display:none;max-width:300px;position:absolute;background:#20588f;color:#fff;text-align:left;padding:6.5px;font-size:13px;font-size:.72222rem;line-height:2}.c-license-icons__item:focus .c-license-icons__icon--hover,.c-license-icons__item:hover .c-license-icons__icon--hover{color:#20588f}.c-license-icons__item:focus .c-license-icons__hover,.c-license-icons__item:hover .c-license-icons__hover{display:block;opacity:1}.c-license-icons__icon{width:23.63636px;height:23.63636px}.c-licensebox{position:relative;font-size:20px;font-size:1.11111rem;line-height:32px}.c-article__license-toggler{font-size:14px;font-size:.77778rem;line-height:20px;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;color:#20588f;min-width:120px;padding:0;text-decoration:underline}@media (min-width:37.5em){.c-article__license-toggler{float:right}}.license__heading{margin-left:26px;margin-right:26px}@media (min-width:61.25em){.license__heading{margin-left:0}}
+
+    /* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+   font-weight:normal; 
+  width:50px; 
+}
+
+.popup:hover {
+  background-color:#4f79a3;
+  color:white;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  width: 60px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -365%;
+  left:105%;
+  font-style:normal;
+  display: flex;
+  flex-flow: column;
+}
+
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -15%;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent #555 transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+.popup-item:hover {
+    background-color:#696969;
+}
+
+/* Styling for the 4 bottom rows */
+
+.popup_bottom {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+   font-weight:normal; 
+  width:50px; 
+}
+
+.popup_bottom:hover {
+  background-color:rgb(79,121,163);
+  color:white;
+}
+
+.popup_bottom .popuptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  width: 60px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 0.1px;
+  left:105%;
+  display: flex;
+  flex-flow: column;
+}
+
+/* Popup arrow */
+.popup_bottom .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: -15%;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent #555 transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup_bottom .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+input {
+  all: unset;
+  cursor: pointer;
+}
+  </style>
+    <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://tall.ndla.no/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '10']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+<body>
+<div id="wrapper">
+<div id="fast">
+<table cellspacing="0" border="0" cellpadding="0">
+<tr><th scope="col" class="farge">&nbsp;</th></tr>
+<tr><th scope="row" class="farge">&nbsp;</th></tr>
+<tr><th scope="row" class="farge">b</th></tr>
+<tr><th scope="row" class="farge">p</th></tr>
+<tr><th scope="row" class="farge">m</th></tr>
+<tr><th scope="row" class="farge">f</th></tr>
+<tr><th scope="row" class="farge">d</th></tr>
+<tr><th scope="row" class="farge">t</th></tr>
+<tr><th scope="row" class="farge">n</th></tr>
+<tr><th scope="row" class="farge">l</th></tr>
+<tr><th scope="row" class="farge">z</th></tr>
+<tr><th scope="row" class="farge">c</th></tr>
+<tr><th scope="row" class="farge">s</th></tr>
+<tr><th scope="row" class="farge">zh</th></tr>
+<tr><th scope="row" class="farge">ch</th></tr>
+<tr><th scope="row" class="farge">sh</th></tr>
+<tr><th scope="row" class="farge">r</th></tr>
+<tr><th scope="row" class="farge">j</th></tr>
+<tr><th scope="row" class="farge">q</th></tr>
+<tr><th scope="row" class="farge">x</th></tr>
+<tr><th scope="row" class="farge">g</th></tr>
+<tr><th scope="row" class="farge">k</th></tr>
+<tr><th scope="row" class="farge">h</th></tr>
+
+</table>
+</div><div id="SCROLL" tabindex="0" style="overflow:scroll;overflow-y:hidden;width:100%;height:auto">
+  <table id="TABLE"  cellspacing="0" border="0" cellpadding="0" style="border-right:1px solid rgb(79,121,163);border-bottom:1px solid rgb(79,121,163);">
+    <tr class="farge" id="HEADERS"></tr> 
+ </table></div></div>
+<div style="padding:10px;float:left;font-weight:normal">
+<ul>
+<li>Vokalen O som norsk å-lyd: blå (ellers som norsk o-lyd)</li>                    
+<li>Vokalen E som norsk ø-lyd: brun (ellers som norsk e-lyd)</li>                       
+<li>Vokalen A som norsk e-lyd: rød (ellers som norsk a-lyd)</li>                        
+<li>Vokalen U som norsk y-lyd: kursiv (ellers som norsk o-lyd)</li>                     
+</ul><p>Sammenligningene med norske lyder er omtrentlige.</p>
+</div><div class="farge" style="float:right;width:400px;padding:10px;"><p style="font-weight:normal;padding-bottom:5px">Produsert av NDLA 2016 - 2023 </p><footer class="c-figure__byline"><div class="c-figure__byline-licenselist"><div class="license-byline" style="font-weight:normal"><ul class="c-license-icons__list"><li class="c-license-icons__item"><svg version="1" xmlns="http://www.w3.org/2000/svg" role="img" width="64" height="64" viewBox="5.5 -3.5 64 64" class="c-icon c-license-icons__icon c-license-icons__icon--hover" aria-label="Denne lisensen gir deg rett til å dele og bruke dette innholdet på visse vilkår."><circle fill="none" role="presentation" cx="37.785" cy="28.501" r="28.836"></circle><path role="presentation" d="M37.441-3.5c8.951 0 16.572 3.125 22.857 9.372 3.008 3.009 5.295 6.448 6.857 10.314 1.561 3.867 2.344 7.971 2.344 12.314 0 4.381-.773 8.486-2.314 12.313-1.543 3.828-3.82 7.21-6.828 10.143-3.123 3.085-6.666 5.448-10.629 7.086-3.961 1.638-8.057 2.457-12.285 2.457s-8.276-.808-12.143-2.429c-3.866-1.618-7.333-3.961-10.4-7.027-3.067-3.066-5.4-6.524-7-10.372S5.5 32.767 5.5 28.5c0-4.229.809-8.295 2.428-12.2 1.619-3.905 3.972-7.4 7.057-10.486C21.08-.394 28.565-3.5 37.441-3.5zm.116 5.772c-7.314 0-13.467 2.553-18.458 7.657-2.515 2.553-4.448 5.419-5.8 8.6a25.204 25.204 0 0 0-2.029 9.972c0 3.429.675 6.734 2.029 9.913 1.353 3.183 3.285 6.021 5.8 8.516 2.514 2.496 5.351 4.399 8.515 5.715a25.652 25.652 0 0 0 9.943 1.971c3.428 0 6.75-.665 9.973-1.999 3.219-1.335 6.121-3.257 8.713-5.771 4.99-4.876 7.484-10.99 7.484-18.344 0-3.543-.648-6.895-1.943-10.057-1.293-3.162-3.18-5.98-5.654-8.458-5.146-5.143-11.335-7.715-18.573-7.715zm-.401 20.915l-4.287 2.229c-.458-.951-1.019-1.619-1.685-2-.667-.38-1.286-.571-1.858-.571-2.856 0-4.286 1.885-4.286 5.657 0 1.714.362 3.084 1.085 4.113.724 1.029 1.791 1.544 3.201 1.544 1.867 0 3.181-.915 3.944-2.743l3.942 2c-.838 1.563-2 2.791-3.486 3.686-1.484.896-3.123 1.343-4.914 1.343-2.857 0-5.163-.875-6.915-2.629-1.752-1.752-2.628-4.19-2.628-7.313 0-3.048.886-5.466 2.657-7.257 1.771-1.79 4.009-2.686 6.715-2.686 3.963-.002 6.8 1.541 8.515 4.627zm18.457 0l-4.229 2.229c-.457-.951-1.02-1.619-1.686-2-.668-.38-1.307-.571-1.914-.571-2.857 0-4.287 1.885-4.287 5.657 0 1.714.363 3.084 1.086 4.113.723 1.029 1.789 1.544 3.201 1.544 1.865 0 3.18-.915 3.941-2.743l4 2c-.875 1.563-2.057 2.791-3.541 3.686a9.233 9.233 0 0 1-4.857 1.343c-2.896 0-5.209-.875-6.941-2.629-1.736-1.752-2.602-4.19-2.602-7.313 0-3.048.885-5.466 2.658-7.257 1.77-1.79 4.008-2.686 6.713-2.686 3.962-.002 6.783 1.541 8.458 4.627z"></path></svg><span class="c-license-icons__hover">Denne lisensen gir deg rett til å dele og bruke dette innholdet på visse vilkår.</span></li><li class="c-license-icons__item"><svg version="1" xmlns="http://www.w3.org/2000/svg" role="img" width="64" height="64" viewBox="5.5 -3.5 64 64" class="c-icon c-license-icons__icon c-license-icons__icon--hover" aria-label="Du må alltid oppgi hvem som har laget innholdet."><circle role="presentation" fill="none" cx="37.637" cy="28.806" r="28.276"></circle><path role="presentation" d="M37.443-3.5c8.988 0 16.57 3.085 22.742 9.257C66.393 11.967 69.5 19.548 69.5 28.5c0 8.991-3.049 16.476-9.145 22.456-6.476 6.363-14.113 9.544-22.912 9.544-8.649 0-16.153-3.144-22.514-9.43C8.644 44.784 5.5 37.262 5.5 28.5c0-8.761 3.144-16.342 9.429-22.742C21.101-.415 28.604-3.5 37.443-3.5zm.114 5.772c-7.276 0-13.428 2.553-18.457 7.657-5.22 5.334-7.829 11.525-7.829 18.572 0 7.086 2.59 13.22 7.77 18.398 5.181 5.182 11.352 7.771 18.514 7.771 7.123 0 13.334-2.607 18.629-7.828 5.029-4.838 7.543-10.952 7.543-18.343 0-7.276-2.553-13.465-7.656-18.571-5.104-5.104-11.276-7.656-18.514-7.656zm8.572 18.285v13.085h-3.656v15.542h-9.944V33.643h-3.656V20.557c0-.572.2-1.057.599-1.457.401-.399.887-.6 1.457-.6h13.144c.533 0 1.01.2 1.428.6.417.4.628.886.628 1.457zm-13.087-8.228c0-3.008 1.485-4.514 4.458-4.514s4.457 1.504 4.457 4.514c0 2.971-1.486 4.457-4.457 4.457s-4.458-1.486-4.458-4.457z"></path></svg><span class="c-license-icons__hover">Du må alltid oppgi hvem som har laget innholdet.</span></li><li class="c-license-icons__item"><svg version="1" xmlns="http://www.w3.org/2000/svg" role="img" width="64" height="64" viewBox="5.5 -3.5 64 64" class="c-icon c-license-icons__icon c-license-icons__icon--hover" aria-label="Du kan bare dele innholdet med samme lisens som det opprinnelige innholdet."><circle role="presentation" fill="none" cx="36.944" cy="28.631" r="29.105"></circle><path role="presentation" d="M37.443-3.5c8.951 0 16.531 3.105 22.742 9.315C66.393 11.987 69.5 19.548 69.5 28.5c0 8.954-3.049 16.457-9.145 22.514-6.437 6.324-14.076 9.486-22.912 9.486-8.649 0-16.153-3.143-22.514-9.429C8.644 44.786 5.5 37.264 5.5 28.501c0-8.723 3.144-16.285 9.429-22.685C21.138-.395 28.643-3.5 37.443-3.5zm.114 5.772c-7.276 0-13.428 2.572-18.457 7.715-5.22 5.296-7.829 11.467-7.829 18.513 0 7.125 2.59 13.257 7.77 18.4 5.181 5.182 11.352 7.771 18.514 7.771 7.123 0 13.334-2.609 18.629-7.828 5.029-4.876 7.543-10.99 7.543-18.343 0-7.313-2.553-13.485-7.656-18.513-5.067-5.145-11.239-7.715-18.514-7.715zM23.271 23.985c.609-3.924 2.189-6.962 4.742-9.114 2.552-2.152 5.656-3.228 9.314-3.228 5.027 0 9.029 1.62 12 4.856 2.971 3.238 4.457 7.391 4.457 12.457 0 4.915-1.543 9-4.627 12.256-3.088 3.256-7.086 4.886-12.002 4.886-3.619 0-6.743-1.085-9.371-3.257-2.629-2.172-4.209-5.257-4.743-9.257H31.1c.19 3.886 2.533 5.829 7.029 5.829 2.246 0 4.057-.972 5.428-2.914 1.373-1.942 2.059-4.534 2.059-7.771 0-3.391-.629-5.971-1.885-7.743-1.258-1.771-3.066-2.657-5.43-2.657-4.268 0-6.667 1.885-7.2 5.656h2.343l-6.342 6.343-6.343-6.343 2.512.001z"></path></svg><span class="c-license-icons__hover">Du kan bare dele innholdet med samme lisens som det opprinnelige innholdet.</span></li></ul> <p style="font-weight:normal;padding-left:5px">Øystein Krogh Visted og Ole Fossgård<br/>Innspilling ved NSI Lydproduksjon A/S</p></div></div></footer></div>
+<script type="text/javascript" src="data.js"></script>
+<script id="text/javascript" src="parser.js"></script>
+</body>
+</html>
